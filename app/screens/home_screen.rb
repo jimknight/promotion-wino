@@ -8,6 +8,14 @@ class HomeScreen < ProMotion::GroupedTableScreen
     }]
   end
   def scan_barcode
-    p "scan here"
+    # do a straight get request here and see what the output is
+    BW::HTTP.get("http://youreawino.com/api/v1/searches/new?bc=085000012178", {format: :json}) do |response|
+      json_response = BW::JSON.parse(response.body.to_str)
+      title = json_response["wine"]["title"]
+      avg_price = json_response["wine"]["avg_price"]
+      description = json_response["wine"]["description"]
+      p title
+      open_screen WineScreen.new(nav_bar: true)
+    end
   end
 end

@@ -2,6 +2,7 @@
 $:.unshift("/Library/RubyMotion/lib")
 require "rubygems"
 require 'motion/project'
+require 'bubble-wrap'
 require 'bundler'
 Bundler.require
 
