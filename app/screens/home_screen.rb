@@ -15,7 +15,7 @@ class HomeScreen < ProMotion::GroupedTableScreen
       avg_price = json_response["wine"]["avg_price"]
       description = json_response["wine"]["description"]
       p title
-      open_screen WineScreen.new(nav_bar: true)
+      open_screen WineScreen.new(nav_bar: true, title: title, description: description)
     end
   end
 end

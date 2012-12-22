@@ -1,10 +1,11 @@
 class WineScreen < ProMotion::GroupedTableScreen
+  attr_accessor :title, :description
   def table_data
     [{
       title: "Wine",
       cells: [
-        { title: "About ProMotion", action: :about_promotion },
-        { title: "About Jamon", action: :about_jamon }
+        { title: title, action: :about_promotion },
+        { title: description, action: :about_jamon }
       ]
     }, {
       title: "Help",
