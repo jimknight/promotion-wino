@@ -1,4 +1,5 @@
 class HomeScreen < ProMotion::GroupedTableScreen
+  title "You're a Wino"
   def table_data
     [{
       title: "Search",
@@ -14,8 +15,7 @@ class HomeScreen < ProMotion::GroupedTableScreen
       title = json_response["wine"]["title"]
       avg_price = json_response["wine"]["avg_price"]
       description = json_response["wine"]["description"]
-      p title
-      open_screen WineScreen.new(nav_bar: true, title: title, description: description)
+      open_screen WineScreen.new(nav_bar: true, wine_title: title, wine_description: description)
     end
   end
 end
